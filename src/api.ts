@@ -7,6 +7,8 @@ interface IMovie {
     poster_path: string;
     title: string;
     overview: string;
+    release_date:string;
+    popularity:number;
 }
 
 export interface IGetMoviesResult {
@@ -62,6 +64,12 @@ export function getPopularTV() {
 }
 export function getTopRatedTV() {
     return fetch(`${BASE_PATH}/tv/top_rated?api_key=${API_KEY}&language=ko`).then(
+        (response) => response.json()
+    );
+}
+
+export function getSearch(keyword:any) {
+    return fetch(`${BASE_PATH}/search/multi?api_key=${API_KEY}&language=ko&query=${keyword}`).then(
         (response) => response.json()
     );
 }

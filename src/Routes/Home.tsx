@@ -103,7 +103,7 @@ left: 0;
 right: 0;
 margin: 0 auto;
 border-radius: 15px;
-overflow: auto;
+overflow: hidden;
 background-color: ${(props) => props.theme.black.lighter};
 z-index:100;
 `;
@@ -115,19 +115,51 @@ const BigCover = styled.div`
   height: 500px;
 `;
 
+
+
 const BigTitle = styled.h3`
   color: ${(props) => props.theme.white.lighter};
   padding: 20px;
   font-size: 46px;
   position: relative;
-  top: -80px;
+  top: -85px;
 `;
 
 const BigOverview = styled.p`
   padding: 20px;
   position: relative;
-  top: -80px;
+  top: -430px;
   color: ${(props) => props.theme.white.lighter};
+  width: 64%;
+  float: right;
+`;
+
+const BigPoster = styled.div`
+  background-size: cover;
+  background-position: center center;
+  height: 490px;
+  width: 310px;
+  margin-left: 30px;
+  position: relative;
+    top: -60px;
+`;
+
+const BigDate = styled.p`
+  padding: 5px 20px;
+  position: relative;
+  top: -430px;
+  color: ${(props) => props.theme.white.lighter};
+  width: 64%;
+  float: right;
+`;
+
+const BigPopular = styled.p`
+  padding: 5px 20px;
+  position: relative;
+  top: -430px;
+  color: ${(props) => props.theme.white.lighter};
+  width: 64%;
+  float: right;
 `;
 
 const SliderDiv = styled.div`
@@ -381,7 +413,14 @@ function Home() {
                           }}
                         />
                         <BigTitle>{nowClickedMovie.title}</BigTitle>
+                        <BigPoster style={{
+                            backgroundImage: `linear-gradient(to top, black, transparent), url(${makeImagePath(
+                              nowClickedMovie.poster_path
+                            )})`,
+                          }}/>
                         <BigOverview>{nowClickedMovie.overview}</BigOverview>
+                        <BigDate>{nowClickedMovie.release_date ? "출시일 : "+ nowClickedMovie.release_date : null }</BigDate>
+                        <BigPopular>{nowClickedMovie.popularity ? "인기점수 : "+nowClickedMovie.popularity : null}</BigPopular>
                       </>
                     )}
                   </BigMovie>
@@ -449,7 +488,14 @@ function Home() {
                           }}
                         />
                         <BigTitle>{topClickedMovie.title}</BigTitle>
+                        <BigPoster style={{
+                            backgroundImage: `linear-gradient(to top, black, transparent), url(${makeImagePath(
+                              topClickedMovie.poster_path
+                            )})`,
+                          }}/>
                         <BigOverview>{topClickedMovie.overview}</BigOverview>
+                        <BigDate>{topClickedMovie.release_date ? "출시일 : "+ topClickedMovie.release_date : null }</BigDate>
+                        <BigPopular>{topClickedMovie.popularity ? "인기점수 : "+topClickedMovie.popularity : null}</BigPopular>
                       </>
                     )}
                   </BigMovie>
@@ -516,7 +562,14 @@ function Home() {
                           }}
                         />
                         <BigTitle>{upcomingClickedMovie.title}</BigTitle>
+                        <BigPoster style={{
+                            backgroundImage: `linear-gradient(to top, black, transparent), url(${makeImagePath(
+                              upcomingClickedMovie.poster_path
+                            )})`,
+                          }}/>
                         <BigOverview>{upcomingClickedMovie.overview}</BigOverview>
+                        <BigDate>{upcomingClickedMovie.release_date ? "출시일 : "+ upcomingClickedMovie.release_date : null }</BigDate>
+                        <BigPopular>{upcomingClickedMovie.popularity ? "인기점수 : "+upcomingClickedMovie.popularity : null}</BigPopular>
                       </>
                     )}
                   </BigMovie>

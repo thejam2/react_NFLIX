@@ -11,12 +11,17 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/react_NFLIX.github.io" element={<Home />} />
         <Route path="/movies/:id" element={<Home />} />
         <Route path="/movies/nowPlaying/:id" element={<Home />} />
         <Route path="/movies/topRated/:id" element={<Home />} />
         <Route path="/movies/upcoming/:id" element={<Home />} />
         <Route path="/tv" element={<Tv />} />
+        <Route path="/tvShow/airing/:id" element={<Tv />} />
+        <Route path="/tvShow/topRated/:id" element={<Tv />} />
+        <Route path="/tvShow/popular/:id" element={<Tv />} />
         <Route path="/search" element={<Search />} />
+        <Route path="/search/:id" element={<Search />} />
       </Routes>
     </Router>
   );

@@ -12,6 +12,7 @@
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "framer-motion": "^9.0.4",
+    "gh-pages": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.1",
@@ -26,7 +27,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build",
+    "predeploy" : "npm run build"
   },
   "eslintConfig": {
     "extends": [
@@ -48,5 +51,6 @@
   },
   "devDependencies": {
     "@types/styled-components": "^5.1.26"
-  }
+  },
+  "homepage":"https://thejam2.github.io/react_NFLIX.github.io/"
 }
